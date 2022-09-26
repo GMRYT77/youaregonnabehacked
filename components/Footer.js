@@ -12,7 +12,7 @@ const Footer = () => {
   return (
     <footer className="w-full bg-white px-1 sm:px-2">
       <div className="max-w-[1280px] sm:max-w-[710px] md:max-w-[900px] lg:max-w-[1100px] xl:max-w-[1240px] mx-auto">
-        <div className="w-full flex justify-between items-center border-[1px] py-2 px-1 sm:px-2 border-b-neutral-700 border-opacity-50">
+        <div className="w-full flex justify-between items-center border-[1px] py-2 px-1 sm:px-2 border-b-neutral-700 border-opacity-30">
           <div className="relative w-[178.4px] h-[39.2px]">
             <Link href="/">
               <a>
@@ -159,7 +159,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col w-full md:w-4/12 my-1 px-2 border-[1px] border-l-neutral-600 border-opacity-50">
+          <div className="flex flex-col w-full md:w-4/12 my-1 px-2  ">
             <div className={footerHeader}>Contact Us</div>
             <form
               className="flex flex-col gap-3 text-[.85rem] font-semibold"
@@ -215,7 +215,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="w-full text-center py-3 border-[1px] border-t-neutral-600 opacity-70 font-semibold px-1 border-opacity-50">
+        <div className="w-full text-center py-3 border-[1px] border-t-neutral-600 opacity-70 font-semibold px-1 border-opacity-30">
           <span>Hack Store &#169; 2022</span>
         </div>
       </div>
