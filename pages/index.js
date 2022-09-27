@@ -8,6 +8,7 @@ export default function Home() {
     <>
       <Head>
         <title>Hack Store</title>
+        <link rel="icon" href="/favicon.svg" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Header />

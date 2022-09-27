@@ -13,7 +13,7 @@ const Footer = () => {
     <footer className="w-full bg-white px-1 sm:px-2">
       <div className="max-w-[1280px] sm:max-w-[710px] md:max-w-[900px] lg:max-w-[1100px] xl:max-w-[1240px] mx-auto">
         <div className="w-full flex justify-between items-center border-[1px] py-2 px-1 sm:px-2 border-b-neutral-700 border-opacity-30">
-          <div className="relative w-[178.4px] h-[39.2px]">
+          <div className="relative w-[156.1px] h-[34.3px]">
             <Link href="/">
               <a>
                 <Image src="/logosvg.svg" alt="logo" layout="fill" />
@@ -135,24 +135,49 @@ const Footer = () => {
                       <li className={footerLi}>Hacking Policy</li>
                     </a>
                   </Link>
+                  <Link href="/">
+                    <a>
+                      <li className={footerLi}>Buying Policy</li>
+                    </a>
+                  </Link>
                 </ul>
               </div>
               <div className="w-full xs:w-1/2 px-2 flex gap-[.35rem] flex-col">
-                <h3 className={footerHeader}>Social</h3>
+                <h3 className={footerHeader}>Acount</h3>
                 <ul className="flex flex-col w-1/2 gap-1">
                   <Link href="/">
                     <a>
-                      <li className={footerLi}>Facebook</li>
+                      <li className={footerLi}>Profile</li>
                     </a>
                   </Link>
                   <Link href="/">
                     <a>
-                      <li className={footerLi}>Twitter</li>
+                      <li className={footerLi}>Acoount</li>
                     </a>
                   </Link>
                   <Link href="/">
                     <a>
-                      <li className={footerLi}>Youtube</li>
+                      <li className={footerLi}>Sell</li>
+                    </a>
+                  </Link>
+                  <Link href="/">
+                    <a>
+                      <li className={footerLi}>Wish List</li>
+                    </a>
+                  </Link>
+                  <Link href="/">
+                    <a>
+                      <li className={footerLi}>Recommendation</li>
+                    </a>
+                  </Link>
+                  <Link href="/">
+                    <a>
+                      <li className={footerLi}>Membership</li>
+                    </a>
+                  </Link>
+                  <Link href="/">
+                    <a>
+                      <li className={footerLi}>Manage Devices</li>
                     </a>
                   </Link>
                 </ul>
@@ -208,7 +233,7 @@ const Footer = () => {
                   type="submit"
                   name="submit"
                   id="submit"
-                  className="w-fit px-4 pt-1 pb-[.3rem] bg-blue-400 text-white tracking-wider cursor-pointer"
+                  className="w-fit px-6 pt-1 pb-[.3rem] bg-blue-400 text-white tracking-wider cursor-pointer"
                 />
               </div>
             </form>
