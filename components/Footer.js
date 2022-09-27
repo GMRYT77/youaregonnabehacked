@@ -29,43 +29,43 @@ const Footer = () => {
 
         <div className="flex w-full flex-col md:flex-row justify-between mb-2 px-1 sm:px-2">
           <div className="flex  justify-between w-full md:w-8/12 my-2">
-            <div className="flex gap-4 xs:gap-0 flex-col xs:flex-row w-1/2">
-              <div className="w-full xs:w-1/2 xs:px-3  px-2 flex gap-[.35rem] flex-col">
+            <div className="flex gap-4 md:gap-0 flex-col md:flex-row w-1/2">
+              <div className="w-full md:w-1/2 md:px-3  px-2 flex gap-[.35rem] flex-col">
                 <h3 className={footerHeader}>About</h3>
                 <ul className="flex flex-col w-1/2 gap-1">
-                  <Link href="/">
+                  <Link href="/5">
                     <a>
                       <li className={footerLi}>Contact Us</li>
                     </a>
                   </Link>
-                  <Link href="/">
+                  <Link href="/4">
                     <a>
                       <li className={footerLi}>About Us</li>
                     </a>
                   </Link>
-                  <Link href="/">
+                  <Link href="/63">
                     <a>
                       <li className={footerLi}>Privacy Policy</li>
                     </a>
                   </Link>
-                  <Link href="/">
+                  <Link href="/43">
                     <a>
                       <li className={footerLi}>Wholesale</li>
                     </a>
                   </Link>
-                  <Link href="/">
+                  <Link href="/4">
                     <a>
                       <li className={footerLi}>Getting Hacked</li>
                     </a>
                   </Link>
-                  <Link href="/">
+                  <Link href="/6">
                     <a>
                       <li className={footerLi}>Info</li>
                     </a>
                   </Link>
                 </ul>
               </div>
-              <div className="w-full xs:w-1/2 px-2 flex gap-[.35rem] flex-col">
+              <div className="w-full md:w-1/2 px-2 flex gap-[.35rem] flex-col">
                 <h3 className={footerHeader}>Help</h3>
                 <ul className="flex flex-col w-1/2 gap-1">
                   <Link href="/">
@@ -106,8 +106,8 @@ const Footer = () => {
                 </ul>
               </div>
             </div>
-            <div className="flex gap-4 xs:gap-0 flex-col xs:flex-row w-1/2">
-              <div className="w-full xs:w-1/2 px-2 flex gap-[.35rem] flex-col">
+            <div className="flex gap-4 md:gap-0 flex-col md:flex-row w-1/2">
+              <div className="w-full md:w-1/2 px-2 flex gap-[.35rem] flex-col">
                 <h3 className={footerHeader}>Policy</h3>
                 <ul className="flex flex-col w-1/2 gap-1">
                   <Link href="/">
@@ -142,7 +142,7 @@ const Footer = () => {
                   </Link>
                 </ul>
               </div>
-              <div className="w-full xs:w-1/2 px-2 flex gap-[.35rem] flex-col">
+              <div className="w-full md:w-1/2 px-2 flex gap-[.35rem] flex-col">
                 <h3 className={footerHeader}>Acount</h3>
                 <ul className="flex flex-col w-1/2 gap-1">
                   <Link href="/">
