@@ -9,25 +9,24 @@ import { BsArrowRight } from "react-icons/bs";
 import Sidebar from "./Sidebar";
 
 const Navbar = () => {
+  const [itemCount, setItemCount] = useState(0);
   const toggleCart = () => {
     if (
-      ref.current.classList.contains("translate-x-[500px]") &&
-      ref.current.classList.contains("translate-x-[500px]")
+      ref.current.classList.contains("-translate-y-[500px]") &&
+      ref.current.classList.contains("-translate-y-[500px]")
     ) {
-      ref.current.classList.remove("translate-x-[500px]");
-      ref.current.classList.add("translate-x-0");
-      ref.current.classList.remove("opacity-0");
-      ref.current.classList.add("opacity-100");
-    } else if (!ref.current.classList.contains("translate-x-[500px]")) {
-      ref.current.classList.add("translate-x-[500px]");
-      ref.current.classList.remove("translate-x-0");
-      ref.current.classList.add("opacity-0");
-      ref.current.classList.remove("opacity-100");
+      ref.current.classList.remove("-translate-y-[500px]");
+      ref.current.classList.add("translate-y-0");
+    } else if (!ref.current.classList.contains("-translate-y-[500px]")) {
+      ref.current.classList.add("-translate-y-[500px]");
+      ref.current.classList.remove("translate-y-0");
     }
   };
   const ref = useRef();
   var subMenuLi =
     "pl-1 pb-2 text-neutral-700 opacity-70 hover:opacity-100 hover:text-neutral-900 transition-[50ms]";
+  var cartItem =
+    "w-full grid gap-[.1rem] grid-cols-[70px_3fr_35px_35px] h-fit max-h-[90px] overflow-hidden shadow-lg mb-1 bg-white";
 
   return (
     <>
@@ -41,7 +40,7 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="relative gap-4 text-[1.6rem] items-center flex">
-            <ul className="hidden lg:flex relative mx-auto py-1 px-1 items-center text-[.975rem] font-semibold ">
+            <ul className="hidden lg:flex relative mx-auto py-1 px-1 items-center text-[.975rem] font-semibold z-[100]">
               <li className="group flex flex-col cursor-pointer hover:bg-neutral-300 hover:bg-opacity-70 transition-[150ms] px-3 pb-[.3rem] pt-1">
                 <span className="">Products</span>
                 <div className=" absolute hidden group-hover:block pt-5 mt-7 -ml-3">
@@ -412,58 +411,59 @@ const Navbar = () => {
               <BiSearch className="absolute right-1 top-2 cursor-pointer" />
             </div>
             <BiSearch className="flex md:hidden cursor-pointer" />
-            <div className="flex relative">
+            <div className="flex">
               <FiShoppingCart
                 className="cursor-pointer block"
                 onClick={toggleCart}
               />
-
               <div
                 ref={ref}
-                className="absolute flex flex-col top-full bg-white px-2 py-1 right-0 text-[.85rem] min-w-[280px] max-w-[400px] opacity-0 mt-5 translate-x-[500px] transition-all "
+                className="absolute flex flex-col top-full bg-white px-2 py-1 right-0 text-[.85rem] min-w-[280px] max-w-[320px] xs:max-w-[400px] mt-5 -translate-y-[500px] z-[98] transition  ease-in-out"
               >
                 <div className="relative flex w-full justify-between text-[.925rem] border-b-[1px] border-neutral-500 pb-[.4rem]">
-                  <span className="font-semibold ">Hack Cart</span>
+                  <span
+                    className="font-semibold "
+                    onClick={() => setItemCount(itemCount + 1)}
+                  >
+                    Hack Cart
+                  </span>
                   <div
                     className="bg-neutral-800 text-white font-bold text px-[.4rem] rounded-full"
                     id="counter"
                   >
-                    0
+                    {itemCount}
                   </div>
                 </div>
                 <div className="relative block w-full py-1 max-h-[380px] overflow-y-auto ">
-                  <div className="w-full grid gap-[.1rem] grid-cols-[70px_200px_35px_35px] h-fit max-h-[90px] overflow-hidden shadow-lg mb-1 bg-white">
-                    <div className="relative w-[70px] h-[70px]">
-                      <Image src="/shoe.jpg" layout="fill" objectFit="cover" />
+                  {itemCount === 0 ? (
+                    <div className="w-full p-2 flex h-12 items-center">
+                      <span className="font-bold">Empty</span>
                     </div>
-                    <p className="flex w-full text-[.725rem] font-semibold ml-1">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Soluta aperiam iste dolorum obcaecati pariatur
-                    </p>
-                    <div className="flex flex-col items-center justify-start gap-2">
-                      <div className="font-bold">Qty</div>
-                      <div className="">1</div>
+                  ) : (
+                    <div className={cartItem}>
+                      <div className="relative w-[70px] h-[70px]">
+                        <Image
+                          src="/shoe.jpg"
+                          layout="fill"
+                          objectFit="cover"
+                        />
+                      </div>
+                      <p className="flex w-full text-[.725rem] font-semibold ml-1 ">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Soluta aperiam iste dolorum obcaecati pariatur
+                      </p>
+                      <div className="flex flex-col items-center justify-start gap-2">
+                        <div className="font-bold">Qty</div>
+                        <div className="">1</div>
+                      </div>
+                      <div className="flex justify-center items-center text-[1.3rem]">
+                        <MdCancel
+                          className="text-red-600 cursor-pointer"
+                          onClick={() => setItemCount(itemCount - 1)}
+                        />
+                      </div>
                     </div>
-                    <div className="flex justify-center items-center text-[1.3rem]">
-                      <MdCancel className="text-red-600 cursor-pointer" />
-                    </div>
-                  </div>
-                  <div className="w-full grid gap-[.1rem] grid-cols-[70px_200px_35px_35px] h-fit max-h-[90px] overflow-hidden shadow-lg mb-1 bg-white">
-                    <div className="relative w-[70px] h-[70px]">
-                      <Image src="/shoe.jpg" layout="fill" objectFit="cover" />
-                    </div>
-                    <p className="flex w-full text-[.725rem] font-semibold ml-1">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Soluta aperiam iste dolorum obcaecati pariatur
-                    </p>
-                    <div className="flex flex-col items-center justify-start gap-2">
-                      <div className="font-bold">Qty</div>
-                      <div className="">1</div>
-                    </div>
-                    <div className="flex justify-center items-center text-[1.3rem]">
-                      <MdCancel className="text-red-600 cursor-pointer" />
-                    </div>
-                  </div>
+                  )}
                 </div>
                 <div className="flex justify-between py-1 border-[1px] border-t-neutral-500 border-opacity-60 pt-2">
                   <button className="px-4 pt-1 pb-[.6rem] font-semibold">
