@@ -48,7 +48,12 @@ const Header = () => {
                 <div className="flex w-full"></div>
 
                 <div className="relative w-full h-[180px]">
-                  <Image src={d.img} layout="fill" objectFit="cover" />
+                  <Image
+                    src={d.img}
+                    layout="fill"
+                    objectFit="cover"
+                    alt={d.id}
+                  />
                 </div>
 
                 <div className="relative flex flex-col">
@@ -63,11 +68,36 @@ const Header = () => {
                     <span className="text-[.9rem] font-semibold">{d.deci}</span>
                   </div>
                   <div className="relative flex gap-2 mb-2">
-                    <Image src="/FillStar.svg" width={22} height={22} />
-                    <Image src="/FillStar.svg" width={22} height={22} />
-                    <Image src="/FillStar.svg" width={22} height={22} />
-                    <Image src="/FillStar.svg" width={22} height={22} />
-                    <Image src="/HollowStar.svg" width={22} height={22} />
+                    <Image
+                      src="/FillStar.svg"
+                      width={22}
+                      height={22}
+                      alt="img"
+                    />
+                    <Image
+                      src="/FillStar.svg"
+                      width={22}
+                      height={22}
+                      alt="img"
+                    />
+                    <Image
+                      src="/FillStar.svg"
+                      width={22}
+                      height={22}
+                      alt="img"
+                    />
+                    <Image
+                      src="/FillStar.svg"
+                      width={22}
+                      height={22}
+                      alt="img"
+                    />
+                    <Image
+                      src="/HollowStar.svg"
+                      width={22}
+                      height={22}
+                      alt="img"
+                    />
                   </div>
                 </div>
                 <Link href={d.slug}>
