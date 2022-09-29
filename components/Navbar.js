@@ -466,10 +466,10 @@ const Navbar = () => {
                   )}
                 </div>
                 <div className="flex justify-between py-1 border-[1px] border-t-neutral-500 border-opacity-60 pt-2">
-                  <button className="px-4 pt-1 pb-[.6rem] font-semibold">
+                  <button className="px-4 pt-1 pb-[.3rem] font-semibold">
                     View Cart
                   </button>
-                  <button className="px-4 pt-1 pb-[.6rem] bg-green-400 text-white">
+                  <button className="px-4 pt-1 pb-[.3rem] bg-green-400 text-white">
                     Checkout
                   </button>
                 </div>
