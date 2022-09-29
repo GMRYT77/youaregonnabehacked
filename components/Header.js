@@ -1,5 +1,7 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
+import products from "../ItemData/data";
 
 const Header = () => {
   return (
@@ -37,11 +39,47 @@ const Header = () => {
               Add to Cart
             </div>
           </div>
-          <div className="relative flex flex-col bg-white rounded drop-shadow  min-w-full min-h-[300px] p-2">
-            <div className="relative w-full h-[180px]">
-              <Image src="/shoe.jpg" layout="fill" objectFit="cover" />
-            </div>
-          </div>
+          {products.map((d, idx) => {
+            return (
+              <div
+                key={idx}
+                className="relative flex flex-col gap-1 bg-white rounded drop-shadow  min-w-full min-h-[300px] p-2"
+              >
+                <div className="flex w-full"></div>
+
+                <div className="relative w-full h-[180px]">
+                  <Image src={d.img} layout="fill" objectFit="cover" />
+                </div>
+
+                <div className="relative flex flex-col">
+                  <span className="tracking-wide text-neutral-600 text-[.875rem] font-semibold capitalize">
+                    {d.category}
+                  </span>
+                  <p className="text-[.925rem] text-neutral-700">{d.name}</p>
+                  <div className="flex items-baseline my-1">
+                    <b className="text-[.75rem] font-bold pr-[1px]">₹</b>
+                    <span className="text-[1.15rem] font-bold ">{d.price}</span>
+                    .
+                    <span className="text-[.9rem] font-semibold">{d.deci}</span>
+                  </div>
+                  <div className="relative flex gap-2 mb-2">
+                    <Image src="/FillStar.svg" width={22} height={22} />
+                    <Image src="/FillStar.svg" width={22} height={22} />
+                    <Image src="/FillStar.svg" width={22} height={22} />
+                    <Image src="/FillStar.svg" width={22} height={22} />
+                    <Image src="/HollowStar.svg" width={22} height={22} />
+                  </div>
+                </div>
+                <Link href={d.slug}>
+                  <a>
+                    <div className="w-full bg-blue-400 py-2 text-center text-semibold text-white rounded cursor-pointer">
+                      Add to Cart
+                    </div>
+                  </a>
+                </Link>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
