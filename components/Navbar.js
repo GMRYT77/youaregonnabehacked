@@ -476,6 +476,11 @@ const Navbar = () => {
               </div>
             </div>
             <HiMenuAlt3 className="flex md:hidden cursor-pointer" />
+            <Link href="/login">
+              <button className="text-[.85rem] font-bold bg-blue-500 px-3 py-1 text-white rounded">
+                Log In
+              </button>
+            </Link>
           </div>
         </div>
       </section>
